@@ -7,13 +7,17 @@ import Root from 'Root';
 let wrapped;
 
 beforeEach(() => {
+    const initalState = {
+        comments: ['Comment 1', 'Comment 2']
+    };
+    
     wrapped = mount(
-        <Root>
+        <Root initalState={initalState}>
             <CommentList />
         </Root>
     );
 });
 
 it('creates one li per comment', () => {
-
+    console.log((wrapped.find('li').length));
 });
